@@ -1,307 +1,170 @@
-# Antigravity - E-Commerce Platform with Abandoned Cart Recovery
+<div align="center">
 
-A modern, full-stack e-commerce platform featuring guest checkout, abandoned cart email recovery, and a beautiful UI built with React, Node.js, and Prisma.
+<img src="https://raw.githubusercontent.com/Studio1HQ/Studio1HQ/main/assets/banners/Antigravity-experiment.webp" alt="Antigravity E-Commerce Experiment: A full-stack store with guest checkout and abandoned cart emails" width="100%" />
 
-## ✨ Features
+<br />
+<br />
 
-### Customer Experience
-- 🛍️ **Guest Checkout** - No account required to purchase
-- 📧 **Abandoned Cart Recovery** - Automatic email reminders with product images and pricing
-- 🎨 **Modern UI** - Built with React, TypeScript, and Tailwind CSS
-- 📱 **Responsive Design** - Works seamlessly on mobile and desktop
-- 🔔 **Real-time Cart Updates** - Instant feedback on cart operations
+# Antigravity E-Commerce Experiment
 
-### Developer Experience
-- 🔄 **Robust API** - RESTful API with retry logic and error handling
-- 📊 **Detailed Logging** - Comprehensive request and operation logging
-- 🔌 **Health Checks** - API health monitoring endpoints
-- 🧪 **Easy Testing** - Test scripts for email and cart functionality
-- 🎯 **Type Safety** - TypeScript throughout the frontend
+### A full-stack store with guest checkout and abandoned cart emails
 
-## 🏗️ Tech Stack
+An e-commerce experiment named Antigravity: a React storefront, an Express and Prisma backend, guest checkout and cron-driven abandoned cart emails sent with Resend.
 
-### Frontend
-- **React** + **TypeScript** - Modern React with full type safety
-- **Vite** - Lightning-fast build tool
-- **Tailwind CSS** - Utility-first CSS framework
-- **shadcn/ui** - Beautiful, accessible UI components
-- **React Router** - Client-side routing
-- **Sonner** - Toast notifications
+<br />
 
-### Backend
-- **Node.js** + **Express** - Fast, minimalist web framework
-- **Prisma** - Next-generation ORM
-- **SQLite** - Lightweight database (perfect for development)
-- **Resend** - Modern email API
-- **node-cron** - Scheduled tasks for abandoned cart emails
+[![Built by Studio1](https://img.shields.io/badge/Built_by_Studio1-f97316?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTYwIiBmaWxsPSJub25lIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgMzVDMCAxNi42ODA3IDE0LjA3NDQgMS42NDg0NCAzMiAwLjEyNjk1M1YxNDFINTEuMDUyM0M1Mi40MzA4IDEzNy4zNDQgNTQuNzQ0NiAxMzMuNjg5IDU3Ljk5MzggMTMwLjAzM0M2MS4xNDQ2IDEyNi41MDggNjQuNjg5MiAxMjMuNDQgNjguNjI3NyAxMjAuODI5QzcyLjU2NjIgMTE4LjM0OSA3Ni4zNTY5IDExNi43ODIgODAgMTE2LjEyOVY4Ni43NTQ0Qzc1LjQ3MDggODcuOTI5MiA3MS4zODQ2IDg5LjY5MTkgNjcuNzQxNSA5Mi4wNDE1QzY0IDk0LjUyMjUgNjAuNzUwOCA5Ny40NiA1Ny45OTM4IDEwMC44NTRDNTYuNTM0NSAxMDIuNzIgNTUuMjU0NSAxMDQuNjU5IDU0LjE1MzkgMTA2LjY3MVYwSDEyNUMxNDQuMzMgMCAxNjAgMTUuNjY5OSAxNjAgMzVWMTI1QzE2MCAxNDQuMzMgMTQ0LjMzIDE2MCAxMjUgMTYwSDEyNFYxOEgxMDQuOTQ4QzEwMy41NjkgMjEuNjgxNiAxMDEuMjU1IDI1LjM2MjggOTguMDA2MiAyOS4wNDQ0Qzk0Ljg1NTQgMzIuNTk0MiA5MS4zMTA4IDM1LjY4NDEgODcuMzcyMyAzOC4zMTRDODMuNDMzOCA0MC44MTIgNzkuNjQzMSA0Mi4zODk2IDc2IDQzLjA0NzRWNzIuNjMwNEM4MC41MjkyIDcxLjQ0NzMgODQuNjE1NCA2OS42NzI0IDg4LjI1ODUgNjcuMzA1N0M5MiA2NC44MDc2IDk1LjI0OTIgNjEuODQ5MSA5OC4wMDYyIDU4LjQzMDdDOTkuNDY1NSA1Ni41NTEzIDEwMC43NDUgNTQuNTk4NiAxMDEuODQ2IDUyLjU3MjNWMTYwSDM1QzE1LjY3IDE2MCAwIDE0NC4zMyAwIDEyNVYzNVoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4K)](https://studio1hq.com)
 
-## 📦 Project Structure
+[More examples](https://github.com/Studio1HQ) &nbsp;·&nbsp; [studio1hq.com](https://studio1hq.com)
 
-```
-Antigravity/
-├── frontend/              # React TypeScript frontend
-│   ├── src/
-│   │   ├── components/   # Reusable UI components
-│   │   ├── context/      # React Context providers (CartContext)
-│   │   ├── pages/        # Page components (Home, Products, Checkout, etc.)
-│   │   ├── data/         # Product data
-│   │   ├── lib/          # Utility functions
-│   │   └── config.ts     # Centralized API configuration
-│   └── package.json
-│
-├── backend/              # Node.js Express backend
-│   ├── src/
-│   │   ├── controllers/  # Route handlers
-│   │   ├── routes/       # API routes
-│   │   ├── services/     # Business logic (email, cron)
-│   │   ├── data/         # Product data
-│   │   ├── lib/          # Prisma client
-│   │   └── app.js        # Express app setup
-│   ├── prisma/
-│   │   └── schema.prisma # Database schema
-│   └── package.json
-│
-└── README.md
-```
+</div>
 
-## 🚀 Getting Started
+<br />
+
+## Overview
+
+A full-stack e-commerce experiment built under the name Antigravity. It has a React storefront with guest checkout and an Express backend that emails shoppers who leave items in their cart. A cron job finds abandoned carts and sends an HTML reminder through [Resend](https://resend.com).
+
+It is useful as a worked example of the abandoned-cart flow, from cart API to scheduled email.
+
+## Features
+
+- **Guest checkout**: no account is needed to buy.
+- **Abandoned cart recovery**: a cron job runs every 15 minutes and emails shoppers with product images, quantities, prices, the cart total and a link back to checkout.
+- **Cart API**: create or get a cart, add items, set the cart email and check out.
+- **Connection resilience**: retry with exponential backoff (3 attempts), 10-second request timeouts and a connection status banner in the UI.
+- **Logging and health checks**: request logging, cart and email operation logs, and `GET /health` with database status.
+- **Email fallback**: falls back to Ethereal for emails when Resend is not configured.
+- **Tests**: a test script for email sending and curl examples for the cart API.
+
+## Tech stack
+
+| Layer | Tool |
+| --- | --- |
+| Frontend | [React](https://react.dev), TypeScript, [Vite](https://vite.dev), [Tailwind CSS](https://tailwindcss.com) |
+| UI | [shadcn/ui](https://ui.shadcn.com), React Router, Sonner |
+| Backend | [Node.js](https://nodejs.org) with [Express](https://expressjs.com) |
+| Database | [Prisma](https://www.prisma.io) with SQLite |
+| Email | [Resend](https://resend.com) |
+| Scheduling | node-cron |
+
+## Getting started
 
 ### Prerequisites
 
-- Node.js 18+ and npm
-- Git
+- Node.js 18 or later and npm
+- A [Resend](https://resend.com) API key
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd Antigravity
-   ```
+```bash
+git clone https://github.com/Studio1HQ/Antigravity-experiment.git
+cd Antigravity-experiment
+npm install
+cd backend && npm install
+cd ../frontend && npm install
+cd ../backend
+cp .env.example .env
+npx prisma generate
+npx prisma db push
+```
 
-2. **Install dependencies**
-   ```bash
-   # Install root dependencies
-   npm install
+### Environment variables
 
-   # Install backend dependencies
-   cd backend
-   npm install
+Edit `backend/.env`.
 
-   # Install frontend dependencies
-   cd ../frontend
-   npm install
-   ```
+| Variable | Description |
+| --- | --- |
+| `DATABASE_URL` | Prisma database URL. Use `file:./dev.db` for SQLite in development. |
+| `RESEND_API_KEY` | Resend API key from [resend.com/api-keys](https://resend.com/api-keys). Verify your domain in Resend for production. |
+| `PORT` | Optional backend port, 4000 by default. |
 
-3. **Set up environment variables**
-   ```bash
-   cd backend
-   cp .env.example .env
-   # Edit .env and add your RESEND_API_KEY
-   ```
+### Run
 
-4. **Initialize the database**
-   ```bash
-   cd backend
-   npx prisma generate
-   npx prisma db push
-   ```
-
-5. **Start the development servers**
-
-   In one terminal (backend):
-   ```bash
-   cd backend
-   npm run dev
-   ```
-
-   In another terminal (frontend):
-   ```bash
-   cd frontend
-   npm run dev
-   ```
-
-6. **Open the app**
-   - Frontend: http://localhost:5173
-   - Backend: http://localhost:4000
-   - Health check: http://localhost:4000/health
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create `backend/.env` with:
+Start both servers from the project root with the root script:
 
 ```bash
-# Database
-DATABASE_URL="file:./dev.db"
-
-# Email (get from https://resend.com)
-RESEND_API_KEY="re_your_api_key_here"
-
-# Optional
-PORT=4000
+npm run dev
 ```
 
-### Email Setup
+Or run them separately:
 
-1. Sign up for [Resend](https://resend.com)
-2. Get your API key
-3. Add it to `backend/.env`
-4. For production, verify your domain in Resend dashboard
-
-### Cron Job Configuration
-
-Abandoned cart emails are sent every 15 minutes by default.
-
-To change the frequency, edit `backend/src/services/cronService.js`:
-
-```javascript
-// Every 15 minutes (default)
-cron.schedule('*/15 * * * *', async () => { ... });
-
-// Every 5 minutes (for testing)
-cron.schedule('*/5 * * * *', async () => { ... });
+```bash
+cd backend && npm run dev
+cd frontend && npm run dev
 ```
 
-## 🧪 Testing
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend: [http://localhost:4000](http://localhost:4000)
+- Health check: [http://localhost:4000/health](http://localhost:4000/health)
 
-### Test Email Sending
+Test email sending and the cart API:
 
 ```bash
 cd backend
 node src/test-email.js your-email@example.com
-```
 
-### Test Cart API
-
-```bash
-# Create a cart
-curl -X POST http://localhost:4000/api/cart \
-  -H "Content-Type: application/json" \
-  -d '{}'
-
-# Add item to cart
-curl -X POST http://localhost:4000/api/cart/items \
-  -H "Content-Type: application/json" \
+curl -X POST http://localhost:4000/api/cart -H "Content-Type: application/json" -d '{}'
+curl -X POST http://localhost:4000/api/cart/items -H "Content-Type: application/json" \
   -d '{"cartId":"YOUR_CART_ID","productId":"1","quantity":1,"price":299.99}'
 ```
 
-## 📧 Email Template
+## How it works
 
-The abandoned cart email includes:
-- Beautiful purple gradient header
-- Product images (80x80px)
-- Product names and quantities
-- Individual item prices
-- Total cart value
-- Call-to-action button linking to checkout
-- Professional footer
+1. The user browses products and adds to the cart (`POST /api/cart/items`).
+2. The user enters an email (`POST /api/cart/email`).
+3. If they leave, the cart stays active.
+4. The cron job in `backend/src/services/cronService.js` runs every 15 minutes (`*/15 * * * *`), finds abandoned carts and sends the email.
+5. The email links back to checkout, and the purchase completes with `POST /api/cart/checkout`.
 
-**Preview:**
-![Email Template Preview](docs/email-preview.png)
+| Endpoint | Purpose |
+| --- | --- |
+| `POST /api/cart` | Create or get a cart |
+| `POST /api/cart/items` | Add an item |
+| `POST /api/cart/email` | Update the cart email |
+| `POST /api/cart/checkout` | Complete checkout |
+| `GET /` | API status |
+| `GET /health` | Health check with database status |
 
-## 🛠️ API Endpoints
+To change the schedule, edit `cronService.js`. To change the email template or colors, edit `sendAbandonedCartEmail` in `backend/src/services/resendService.js`. To add products, edit `frontend/src/data/products.ts` and `backend/src/data/products.js`.
 
-### Cart Management
-
-- `POST /api/cart` - Create or get cart
-- `POST /api/cart/items` - Add item to cart
-- `POST /api/cart/email` - Update cart email
-- `POST /api/cart/checkout` - Complete checkout
-
-### Health & Status
-
-- `GET /` - API status
-- `GET /health` - Health check with database status
-
-## 🔄 Workflow
-
-1. **User browses products** → Frontend displays products
-2. **User adds to cart** → `POST /api/cart/items`
-3. **User enters email** → `POST /api/cart/email`
-4. **User abandons cart** → Cart remains active
-5. **15 minutes pass** → Cron job finds abandoned cart
-6. **Email sent** → Beautiful HTML email with cart details
-7. **User clicks email** → Returns to checkout
-8. **User completes purchase** → `POST /api/cart/checkout`
-
-## 🎨 Customization
-
-### Change Brand Colors
-
-Edit `backend/src/services/resendService.js`:
-
-```javascript
-// Header gradient
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+```text
+frontend/   React storefront (components, CartContext, pages, config.ts)
+backend/    Express API (controllers, routes, services, Prisma schema)
 ```
 
-### Add Products
+The backend also includes `services/tensorlake.js` and a receipt controller. Both are mock stubs that log events and return sample items. They do not call a live API.
 
-Edit `frontend/src/data/products.ts` and `backend/src/data/products.js`
+For production, use PostgreSQL or MySQL, set `DATABASE_URL`, run `npx prisma migrate deploy`, deploy the backend to a Node host, build the frontend with `npm run build` for static hosting and set `API_BASE_URL` in `frontend/src/config.ts`.
 
-### Modify Email Template
+## Resources
 
-Edit `backend/src/services/resendService.js` in the `sendAbandonedCartEmail` function
+- [Resend](https://resend.com): email API used for reminders.
+- [Prisma](https://www.prisma.io): ORM for the cart data.
+- [shadcn/ui](https://ui.shadcn.com): UI components.
+- [Pixabay](https://pixabay.com): source of the product images.
 
-## 📊 Features in Detail
-
-### Connection Resilience
-- Retry logic with exponential backoff (3 attempts)
-- 10-second request timeouts
-- Automatic connection status tracking
-- Visual connection status banner
-
-### Logging
-- Request logging middleware
-- Detailed cart operation logs
-- Email sending status logs
-- Error logging with full context
-
-### Error Handling
-- Input validation on all endpoints
-- Structured error responses
-- Graceful degradation (Ethereal fallback for emails)
-
-## 🚀 Deployment
-
-### Backend
-
-1. Use PostgreSQL or MySQL in production
-2. Update `DATABASE_URL` in production `.env`
-3. Run migrations: `npx prisma migrate deploy`
-4. Deploy to Node.js hosting (Vercel, Railway, etc.)
-
-### Frontend
-
-1. Build: `npm run build`
-2. Deploy `dist` folder to static hosting (Vercel, Netlify, etc.)
-3. Update `API_BASE_URL` in `src/config.ts` to production backend URL
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🙏 Acknowledgments
-
-- [shadcn/ui](https://ui.shadcn.com/) - Beautiful UI components
-- [Resend](https://resend.com) - Modern email API
-- [Prisma](https://www.prisma.io/) - Next-generation ORM
-- [Pixabay](https://pixabay.com) - Product images
-
-## 📞 Support
-
-For questions or issues, please open an issue on GitHub.
+<br />
 
 ---
 
-Built with ❤️ using React, Node.js, and Prisma
+<div align="center">
+
+<a href="https://studio1hq.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Studio1HQ/website/main/brand/studio1-logo-on-dark.svg" />
+    <img src="https://raw.githubusercontent.com/Studio1HQ/website/main/brand/studio1-logo-on-light.svg" alt="Studio1" width="160" />
+  </picture>
+</a>
+
+Built by **[Studio1](https://studio1hq.com)**, the technical content and DevRel partner for devtool teams.<br />
+Browse more open-source examples at [github.com/Studio1HQ](https://github.com/Studio1HQ).
+
+[![Website](https://img.shields.io/badge/studio1hq.com-0b0807?style=for-the-badge&logo=googlechrome&logoColor=white)](https://studio1hq.com)
+[![Book a call](https://img.shields.io/badge/Book_a_strategy_call-f97316?style=for-the-badge&logo=googlecalendar&logoColor=white)](https://cal.com/studio1/collab)
+[![X](https://img.shields.io/badge/%40Studio1HQ-141414?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Studio1HQ)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/studio1hq/)
+
+<sub><a href="https://studio1hq.com">studio1hq.com</a> · Technical content, docs, video and DevRel for devtools</sub>
+
+</div>
